@@ -2,12 +2,23 @@ import React from "react";
 import Header from "./Header";
 import Note from "./Note";
 import Footer from "./Footer";
+import notes from "../notes";
+
+function createUnit (unit){
+    return (
+        <Note 
+            key={unit.key}
+            title={unit.title}
+            content={unit.content}
+        />  
+    );
+}
 
 function App(){
     return (
         <div>
         <Header />
-        <Note />
+        {notes.map(createUnit)}
         <Footer />
     </div>
     )
