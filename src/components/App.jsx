@@ -4,31 +4,30 @@ import Note from "./Note";
 import Footer from "./Footer";
 import notes from "../notes";
 
-// function createUnit (unit){
-//     return (
-//         <Note 
-//             key={unit.key}
-//             title={unit.title}
-//             content={unit.content}
-//         />  
-//     );
-// }
+function createNotes (noteItem){
+    return (
+        <Note 
+            key={noteItem.key}
+            title={noteItem.title}
+            content={noteItem.content}
+        />  
+    );
+}
 
 function App(){
     return (
         <div>
         <Header />
-        {/* {notes.map(createUnit)} */}
-        {notes.map(unit=>{
+        {notes.map((noteItem) => {
     return (
         <Note 
-            key={unit.key}
-            title={unit.title}
-            content={unit.content}
+            key={noteItem.key}
+            title={noteItem.title}
+            content={noteItem.content}
         />  
     );
-})}
-
+}
+)}
         <Footer />
     </div>
     )
